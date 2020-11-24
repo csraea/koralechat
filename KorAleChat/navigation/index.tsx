@@ -6,7 +6,7 @@ import Colors from '../constants/Colors';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
+import MNavigator from './MNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 
 import { MaterialCommunityIcons, Octicons } from "@expo/vector-icons"   // icon set for the earch icon
@@ -32,6 +32,8 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{
       headerStyle: {
+        shadowOpacity: 0,   //ios
+        elevation: 0,       //android
         backgroundColor: Colors.light.tint
       },
       headerTitleStyle: {
@@ -41,19 +43,19 @@ function RootNavigator() {
     }}>
       <Stack.Screen
         name="Root"
-        component={BottomTabNavigator} 
+        component={MNavigator} 
         options={{
           title: "K O R A L E",
           headerRight: () => {
             return <View  style={{ flexDirection: "row", justifyContent: "space-between", width: 60, marginRight: 6 }}>
               <Octicons
                 name="search" 
-                size={24} 
+                size={22} 
                 color={useColorScheme() === 'dark' ? Colors.light.background : Colors.dark.background}/>
               
               <MaterialCommunityIcons
                 name="dots-vertical" 
-                size={24} 
+                size={22} 
                 color={useColorScheme() === 'dark' ? Colors.light.background : Colors.dark.background}/>
             </View>;
           }
