@@ -26,7 +26,7 @@ export type User = {
 export type Message = {
   id: String;
   content: String;
-  ctime: number;
+  ctime: String;
 }
 
 export type TalkPlace = {
