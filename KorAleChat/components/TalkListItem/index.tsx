@@ -1,13 +1,14 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
 import { color } from 'react-native-reanimated';
-import TalkRooms from '../../data/TalkRooms';
+import TalkRooms from '../../data/TalkPlaces';
 
 import { TalkPlace } from '../../types';
 import styles from './style';
 
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
+import moment from 'moment';
 
 export type TalkListItemProps = {
     talkPlace: TalkPlace;
@@ -39,10 +40,14 @@ const TalkListItem = (props: TalkListItemProps) => {
 
             </View>
 
-            <Text style={styles.time}>{talkPlace.lastMessage.ctime}</Text>
+            <Text style={styles.time}>
+                {moment(talkPlace.lastMessage.ctime).format("YYYY/MM/DD")}
+            </Text>
         </View>
     )
 };
 
+// TODO: display the length of the last message correctly 
+// TODO: display default avaar if is not available
 
 export default TalkListItem;
