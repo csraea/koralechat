@@ -12,6 +12,7 @@ import TalkPlaceScreen from '../screens/TalkPlaceScreen'
 
 import { MaterialCommunityIcons, MaterialIcons, Octicons } from "@expo/vector-icons"   // icon set for the earch icon
 import styles from '../components/TalkListItem/style';
+import Contacts from '../screens/Contacts';
 
 
 // If you are not familiar with React Navigation, we recommend going through the
@@ -84,6 +85,7 @@ function RootNavigator() {
         })}
       />
 
+<Stack.Screen name="Contancts" component={Contacts} />
     </Stack.Navigator>
   );
 }

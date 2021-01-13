@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   messageBox: {
     borderRadius: 5,
     padding: 10,
+    margin: -6
   },
   name: {
     color: '#FA7268',
@@ -20,7 +21,9 @@ const styles = StyleSheet.create({
   },
   time: {
     alignSelf: "flex-end",
-    color: 'grey'
+    color: 'grey',
+    marginBottom: -6,
+    fontSize: 10
   }
 });
 

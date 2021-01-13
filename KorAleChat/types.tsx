@@ -1,6 +1,8 @@
 export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
+  TalkPlace: undefined;
+  Contacts: undefined;
 };
 
 export type MParamList = {
@@ -9,8 +11,8 @@ export type MParamList = {
   Status: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type ContactsParamList = {
+  ContactsScreen: undefined;
 };
 
 export type TabTwoParamList = {
@@ -21,6 +23,7 @@ export type User = {
   id: String;
   name: String;
   imgUri: String;
+  status: String;
 }
 
 export type Message = {

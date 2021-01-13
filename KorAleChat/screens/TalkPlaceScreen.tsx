@@ -9,8 +9,9 @@ import { FlatList } from 'react-native-gesture-handler';
 import talkPlaceData from '../data/Talks';
 import TalkMessage from '../components/TalkMessage';
 
-const BG1 = { uri: 'https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'};
-const BG2 = { uri: 'https://i.pinimg.com/originals/0a/75/5a/0a755a111030c39fca13d9fa38931f20.jpg'};
+import BG1 from "../assets/images/BG1.png";
+import BG2 from "../assets/images/BG2.jpg";
+import InputBox from '../components/InputBox';
 
 const TalkPlaceSreen = () => {
 
@@ -25,11 +26,13 @@ const TalkPlaceSreen = () => {
 
     return (
         <ImageBackground style={{width: '100%', height: '100%'}} source={BG}>
-        <FlatList
-            inverted
-            data={talkPlaceData.messages}
-            renderItem={({ item }) => <TalkMessage message={item} /> }
-        />
+            <FlatList
+                inverted
+                data={talkPlaceData.messages}
+                renderItem={({ item }) => <TalkMessage message={item} /> }
+            />
+
+            <InputBox />
         </ImageBackground>
     )
 }

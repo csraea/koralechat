@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
@@ -9,9 +9,10 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TalkScreen from '../screens/TalkScreen';
 import TabTwoScreen from '../screens/StatusScreen';
-import { MParamList, TabOneParamList, TabTwoParamList } from '../types';
+import { ContactsParamList, MParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 import { Fontisto } from '@expo/vector-icons'
+import Contacts from '../screens/Contacts';
 
 const MTab = createMaterialTopTabNavigator<MParamList>();
 
@@ -35,19 +36,19 @@ export default function MNavigator() {
         },
         showIcon: true,
         tabStyle: {
-          maxHeight: 40
+          maxHeight: 38,
         }
       }}>
       <MTab.Screen
 
         // TODO: change the width of the tab according to the icon
 
-        name="Camera"
-        component={TabOneNavigator}
+        name="Contacts"
+        component={ContactsNavigator}
         options={{
       
           tabBarLabel: () => null,
-          tabBarIcon: ({ color }) => <Fontisto name="camera" color={color} size={18}/>
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="message-plus" color={color} size={36} style={{marginTop: -14, marginRight: -10, marginLeft: -7}}/>
         }}
       />
       <MTab.Screen
@@ -70,17 +71,18 @@ function TabBarIcon(props: { name: string; color: string }) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const ContactsStack = createStackNavigator<ContactsParamList>();
 
-function TabOneNavigator() {
+function ContactsNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TalkScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+    <ContactsStack.Navigator>
+      <ContactsStack.Screen
+        name="ContactsScreen"
+        component={Contacts}
+        options={{ headerTitle: 'Create a new Talk', headerStyle: {
+          backgroundColor: Colors[useColorScheme()].background}, headerTintColor: Colors[useColorScheme()].tint }}
       />
-    </TabOneStack.Navigator>
+    </ContactsStack.Navigator>
   );
 }
 
