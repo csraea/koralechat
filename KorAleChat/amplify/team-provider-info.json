@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-koralechat-dev-194503-authRole",
+      "UnauthRoleArn": "arn:aws:iam::072679739114:role/amplify-koralechat-dev-194503-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::072679739114:role/amplify-koralechat-dev-194503-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-koralechat-dev-194503-deployment",
+      "UnauthRoleName": "amplify-koralechat-dev-194503-unauthRole",
+      "StackName": "amplify-koralechat-dev-194503",
+      "StackId": "arn:aws:cloudformation:eu-central-1:072679739114:stack/amplify-koralechat-dev-194503/7446cb80-55cf-11eb-be33-02665a1fbcc8",
+      "AmplifyAppId": "d26byxenvnhojl"
+    }
+  }
+}

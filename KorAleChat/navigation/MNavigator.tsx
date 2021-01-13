@@ -31,7 +31,7 @@ export default function MNavigator() {
           fontWeight: "bold"
         },
         indicatorStyle: {
-          height: 4,
+          height: 3,
           backgroundColor:  Colors[colorScheme].text
         },
         showIcon: true,

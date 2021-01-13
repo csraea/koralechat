@@ -7,7 +7,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 10,
     alignItems: 'flex-end',
-    borderRadius: 25
+    borderRadius: 25,
+    borderColor: '#FA7268',
+    borderWidth: 1
   },
   mainContainer: {
     flexDirection: 'row',

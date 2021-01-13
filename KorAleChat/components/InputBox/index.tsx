@@ -9,9 +9,16 @@ import styles from './styles';
 import { Icon, InlineIcon } from '@iconify/react';
 import { mdiMapMarkerRadius } from '@mdi/js';
 
-const InputBox = () => {
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 
+const InputBox = () => {
     const [message, setMessage] = useState('');
+
+    let state={
+        location: {},
+        errorMessage: ''
+    }
 
     const sendMessage = () => {
         console.warn(`Sending : ${message}`)
@@ -20,6 +27,23 @@ const InputBox = () => {
 
         setMessage('')
     }
+
+    const _getLocation = async ( ) => {
+        console.log("Hey");
+        const { status } = await Permissions.askAsync(Permissions.LOCATION);
+    
+        if(status !== 'granted') {
+            console.log('PERMISSION NOT GRANTED');
+    
+            state.errorMessage = 'PERMISSION NOT GRANTED';
+    
+        }
+    
+        const location = await Location.getCurrentPositionAsync();
+        state.location = location;
+        console.log(status);
+      }
+    
 
     const onPress = () => {
         if(!message) {
@@ -33,7 +57,9 @@ const InputBox = () => {
             <View style={[styles.mainContainer, {
                 backgroundColor: Colors[useColorScheme()].backgroundColor
             }]}> 
-                <MaterialCommunityIcons name="map-marker-plus" size={26} color="#FA7268" />
+                <TouchableOpacity>
+                    <MaterialCommunityIcons name="map-marker-plus" size={26} color="#FA7268" onPress={_getLocation}/>
+                </TouchableOpacity>
                 <TextInput 
                     multiline 
                     placeholder={"Type a message"}
