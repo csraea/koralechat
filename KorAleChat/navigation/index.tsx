@@ -89,3 +89,4 @@ function RootNavigator() {
 }
 
 // TODO: add touchable opacity to icons & onClick() function with searching & editing
+// TODO: add user avatar nxt to the name at the header of the dialog

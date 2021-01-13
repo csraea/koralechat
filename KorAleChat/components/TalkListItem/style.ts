@@ -8,12 +8,16 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: 'space-between',
     padding: 10,
+    borderBottomColor: 'grey',
+    borderBottomWidth: 1,
+    borderBottomLeftRadius: 200,
   },
   leftTalkContainer: {
     flexDirection: 'row',
   },
   midTalkContainer: {
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+     
   },
   avatar: {
     width: 60,

@@ -27,10 +27,11 @@ export type Message = {
   id: String;
   content: String;
   ctime: String;
+  user: User;
 }
 
 export type TalkPlace = {
   id: String;
-  users: [User];
+  users: User[];
   lastMessage: Message;
 }
