@@ -62,7 +62,7 @@ const InputBox = () => {
                 </TouchableOpacity>
                 <TextInput 
                     multiline 
-                    placeholder={"Type a message"}
+                    placeholder={"Type a message, ILONA"}
                     placeholderTextColor="grey"
                     value={message}
                     onChangeText={setMessage}
