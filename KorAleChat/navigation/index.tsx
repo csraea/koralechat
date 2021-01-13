@@ -1,4 +1,4 @@
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, DarkTheme, BaseRouter } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { ColorSchemeName, useColorScheme, View } from 'react-native';
@@ -8,8 +8,10 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import MNavigator from './MNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
+import TalkPlaceScreen from '../screens/TalkPlaceScreen'
 
-import { MaterialCommunityIcons, Octicons } from "@expo/vector-icons"   // icon set for the earch icon
+import { MaterialCommunityIcons, MaterialIcons, Octicons } from "@expo/vector-icons"   // icon set for the earch icon
+import styles from '../components/TalkListItem/style';
 
 
 // If you are not familiar with React Navigation, we recommend going through the
@@ -39,7 +41,8 @@ function RootNavigator() {
       headerTitleStyle: {
         fontWeight: "bold"
       },
-      headerTitleAlign: "left"
+      headerTitleAlign: "left",
+      headerTintColor: useColorScheme() === 'dark' ? Colors.light.background : Colors.dark.background
     }}>
       <Stack.Screen
         name="Root"
@@ -63,6 +66,26 @@ function RootNavigator() {
       />
 
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen 
+        name="TalkPlace" 
+        component={TalkPlaceScreen} 
+        options={({ route }) => ({ 
+          headerBackTitle: "Talks",
+          headerTitleAlign: "center",
+          title: route.params.name,
+          headerRight: () => {
+            return <View  style={{ flexDirection: "row", justifyContent: "space-between", width: 22, marginRight: 6}}>
+              <MaterialCommunityIcons
+                name="dots-vertical" 
+                size={22} 
+                color={useColorScheme() === 'dark' ? Colors.light.background : Colors.dark.background}/>
+            </View>
+          }, 
+        })}
+      />
+
     </Stack.Navigator>
   );
 }
+
+// TODO: add touchable opacity to icons & onClick() function with searching & editing

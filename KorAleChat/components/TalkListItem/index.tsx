@@ -1,5 +1,10 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { 
+    Text,
+    View,
+    Image, 
+    TouchableWithoutFeedback
+ } from 'react-native';
 import { color } from 'react-native-reanimated';
 import TalkRooms from '../../data/TalkPlaces';
 
@@ -9,6 +14,7 @@ import styles from './style';
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
 import moment from 'moment';
+import { useNavigation } from '@react-navigation/native';
 
 export type TalkListItemProps = {
     talkPlace: TalkPlace;
@@ -22,9 +28,20 @@ const TalkListItem = (props: TalkListItemProps) => {
 
     const { talkPlace } = props;
 
+    const navigation = useNavigation();
+
     const user = talkPlace.users[1];
 
+    const onClick = () => {
+        navigation.navigate('TalkPlace', { 
+            id: talkPlace.id,
+            name: user.name, 
+            uri: user.imageUri
+        });
+    };
+
     return (
+        <TouchableWithoutFeedback onPress={onClick}>
         <View style={styles.container}>
             <View style={styles.leftTalkContainer}>
 
@@ -44,6 +61,7 @@ const TalkListItem = (props: TalkListItemProps) => {
                 {moment(talkPlace.lastMessage.ctime).format("YYYY/MM/DD")}
             </Text>
         </View>
+        </TouchableWithoutFeedback>
     )
 };
 
