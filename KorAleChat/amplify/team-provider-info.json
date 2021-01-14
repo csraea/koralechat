@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-koralechat-dev-204530-authRole",
-      "UnauthRoleArn": "arn:aws:iam::410869519211:role/amplify-koralechat-dev-204530-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::410869519211:role/amplify-koralechat-dev-204530-authRole",
-      "Region": "eu-central-1",
-      "DeploymentBucketName": "amplify-koralechat-dev-204530-deployment",
-      "UnauthRoleName": "amplify-koralechat-dev-204530-unauthRole",
-      "StackName": "amplify-koralechat-dev-204530",
-      "StackId": "arn:aws:cloudformation:eu-central-1:410869519211:stack/amplify-koralechat-dev-204530/e609e5b0-55d7-11eb-8739-0672df340e7e",
-      "AmplifyAppId": "d3gev69u0l7hx8"
+      "AuthRoleName": "amplify-koralechat-dev-13506-authRole",
+      "UnauthRoleArn": "arn:aws:iam::410869519211:role/amplify-koralechat-dev-13506-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::410869519211:role/amplify-koralechat-dev-13506-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-koralechat-dev-13506-deployment",
+      "UnauthRoleName": "amplify-koralechat-dev-13506-unauthRole",
+      "StackName": "amplify-koralechat-dev-13506",
+      "StackId": "arn:aws:cloudformation:us-east-1:410869519211:stack/amplify-koralechat-dev-13506/5b404720-5600-11eb-b6c6-0e53bf60440d",
+      "AmplifyAppId": "d2kcihviwehrjy"
     },
     "categories": {
       "auth": {
-        "koralechatc3387649": {}
+        "koralechat1497170e": {}
       }
     }
   }

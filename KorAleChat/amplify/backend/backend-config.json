@@ -1,10 +1,11 @@
 {
   "auth": {
-    "koralechatc3387649": {
+    "koralechat1497170e": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
     }
-  }
+  },
+  "api": {}
 }

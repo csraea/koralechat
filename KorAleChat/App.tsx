@@ -6,12 +6,19 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
-import Amplify from "aws-amplify";
-import awsExports from "./aws-exports";
-Amplify.configure(awsExports);
 import { withAuthenticator } from 'aws-amplify-react-native';
 
-import { AmplifyTheme, Authenticator } from 'aws-amplify-react-native';
+
+import {
+  Auth,
+  API,
+  graphqlOperation,
+} from 'aws-amplify';
+
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config)
+
 
 function App() {
   const isLoadingComplete = useCachedResources();
